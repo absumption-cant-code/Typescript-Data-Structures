@@ -25,6 +25,7 @@ export class listNode<T> {
     constructor(public data: T) {};
 }
 
+/* It's a doubly linked list that can insert nodes at the top or bottom of the list */
 export class doublyLinkedList<T> implements listProperties<T> {
     public top: (listNode<T> | null) = null;
     public bottom: (listNode<T> | null) = null;
