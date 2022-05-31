@@ -57,6 +57,7 @@ export class doublyLinkedList<T> implements listProperties<T> {
     }
 }
 
+/* It's a singly linked list that has a bottom property that is either null or a listNode. */
 export class singlyLinkedList<T> implements listProperties<T> {
     public bottom: (listNode<T> | null) = null;
 
@@ -70,5 +71,26 @@ export class singlyLinkedList<T> implements listProperties<T> {
 
         return node
     } 
+}
+
+/* It's a circular linked list that has a top and bottom property, and an insertAtBottom method. */
+export class circularLinkedList<T> implements listProperties<T> {
+    public top: (listNode<T> | null) = null;
+    public bottom: (listNode<T> | null) = null;
+
+    public insertAtBottom(data: T): listNode<T> {
+        let node = new listNode(data);
+
+        if (!this.top) { this.top = node } else {
+            if (!this.bottom) { this.bottom = node } else {
+                this.bottom.below = node;
+                this.bottom = node;
+            }
+
+            this.bottom.below = this.top;
+        }
+
+        return node
+    }
 }
 
