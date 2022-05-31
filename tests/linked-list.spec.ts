@@ -1,4 +1,4 @@
-import { doublyLinkedList, listNode } from "../src/linked-list";
+import { doublyLinkedList, singlyLinkedList, listNode } from "../src/linked-list";
 
 describe('linkedListImplementation', () => {
     test('doublyLinkedListInsertTop', () => {
@@ -8,5 +8,14 @@ describe('linkedListImplementation', () => {
         linkedList.insertAtBottom(linkedListDatum);
 
         expect(linkedList.bottom).toStrictEqual(new listNode(linkedListDatum));
-    })
+    });
+
+    test('singlyLinkedListInsertBottom', () => {
+        let linkedList = new singlyLinkedList();
+        let linkedListDatum = 1;
+
+        linkedList.insertAtBottom(linkedListDatum);
+
+        expect(linkedList.bottom).toStrictEqual(new listNode(linkedListDatum));
+    });
 })

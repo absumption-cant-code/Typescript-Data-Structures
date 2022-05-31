@@ -14,8 +14,8 @@ interface listProperties<T> {
    // search(comparator: (data: T) => boolean): (listNode<T> | null);
 
     //insert(data: T, position?: number): listNode<T>; // * Warning * This method is more costly when performed on a doubly linked list due to the nature of recursion.
-    insertAtTop(data: T): listNode<T>; // Insert a datum at the top of the linked list
-    insertAtBottom(data: T): listNode<T>; // Insert a datum at the bottom of the linked list
+    insertAtTop?(data: T): listNode<T>; // Insert a datum at the top of the linked list
+    insertAtBottom(data: T): listNode<T>; // Insert a datum at the bottom of the linked list, universal accross both singly and doubly
 }
 
 export class listNode<T> {
@@ -56,3 +56,19 @@ export class doublyLinkedList<T> implements listProperties<T> {
         return node
     }
 }
+
+export class singlyLinkedList<T> implements listProperties<T> {
+    public bottom: (listNode<T> | null) = null;
+
+    public insertAtBottom(data: T): listNode<T> {
+        let node = new listNode(data);
+
+        if (!this.bottom) { this.bottom = node } else {
+            this.bottom.below = node;
+            this.bottom = node;
+        }
+
+        return node
+    } 
+}
+
