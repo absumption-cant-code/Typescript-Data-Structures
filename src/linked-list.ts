@@ -30,6 +30,13 @@ export class doublyLinkedList<T> implements listProperties<T> {
     public top: (listNode<T> | null) = null;
     public bottom: (listNode<T> | null) = null;
 
+    /**
+     * If the top node is null, then set the top node to the new node, otherwise set the new node's
+     * below node to the current top node, set the current top node's above node to the new node, and
+     * set the top node to the new node.
+     * @param {T} data - T - The data to be inserted into the list.
+     * @returns The node that was inserted.
+     */
     public insertAtTop(data: T): listNode<T> {
         let node = new listNode(data);
 
@@ -43,6 +50,13 @@ export class doublyLinkedList<T> implements listProperties<T> {
         return node
     }
 
+    /**
+     * If the top node is null, then set the top node to the new node, otherwise set the new node's
+     * below node to the current top node, set the current top node's above node to the new node, and
+     * set the top node to the new node.
+     * @param {T} data - T - The data to be inserted into the list.
+     * @returns The node that was inserted.
+     */
     public insertAtBottom(data: T): listNode<T> {
         let node = new listNode(data);
         
@@ -61,6 +75,12 @@ export class doublyLinkedList<T> implements listProperties<T> {
 export class singlyLinkedList<T> implements listProperties<T> {
     public bottom: (listNode<T> | null) = null;
 
+    /**
+     * If the bottom of the stack is empty, then the bottom of the stack is the new node, otherwise the
+     * bottom of the stack is the new node and the new node is the bottom of the stack.
+     * @param {T} data - T - The data to be inserted into the node
+     * @returns The node that was just created.
+     */
     public insertAtBottom(data: T): listNode<T> {
         let node = new listNode(data);
 
@@ -78,6 +98,13 @@ export class circularLinkedList<T> implements listProperties<T> {
     public top: (listNode<T> | null) = null;
     public bottom: (listNode<T> | null) = null;
 
+    /**
+     * If the stack is empty, then the new node becomes the top and bottom of the stack. If the stack
+     * is not empty, then the new node becomes the bottom of the stack and the bottom of the stack
+     * points to the top of the stack.
+     * @param {T} data - T - The data to be inserted into the node
+     * @returns The node that was inserted.
+     */
     public insertAtBottom(data: T): listNode<T> {
         let node = new listNode(data);
 
