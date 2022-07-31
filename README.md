@@ -4,4 +4,4 @@
 </p>
 Please be cautious when reviewing or using any of the code within this repository, I often update, change, break, and try to optimize it beyond reasonable means. I'm really just using this space to grow my personal knowledge on the Typescript language and how Data Structures work prior to attending college. 
 
-Git GPG Signature Experiment 2
+Git GPG Signature Experiment 3
